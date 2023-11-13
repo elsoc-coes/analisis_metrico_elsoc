@@ -1,0 +1,96 @@
+
+# Presentación del estudio
+
+
+```{r cargar-paquetes-2}
+rm(list=ls())
+
+library(knitr)
+library(kableExtra)
+library(gridExtra)
+library(tidyverse)
+library(sjmisc)
+library(sjlabelled)
+library(elsoc)
+library(lubridate)
+library(viridis)
+library(statar)
+library(bookdown)
+```
+
+
+```{r cargar-datos-2}
+
+load(file.path('..', 'inputs', 'ELSOC_Long.RData'))
+load(file.path('..', 'inputs', 'ELSOC_Wide.RData'))
+
+```
+
+## Sobre COES
+
+El Centro de Estudios de Conflicto y Cohesión Social ([COES](https://coes.cl/)) desarrolla investigación colaborativa en temas relacionados al conflicto y la cohesión social en Chile, por medio de un equipo multidisciplinario proveniente de las ciencias sociales y humanidades. COES centra sus actividades académicas y de difusión en el análisis de las múltiples manifestaciones del conflicto y cohesión social en Chile, sus causas, así como también su contexto cultural e histórico.
+
+COES está patrocinado por la Universidad de Chile y la Pontificia Universidad Católica de Chile, y como instituciones asociadas se encuentran la Universidad Diego Portales y la Universidad Adolfo Ibáñez. COES cuenta con el apoyo del Fondo de Financiamiento de Centros de Investigación en Áreas Prioritarias ([FONDAP](https://www.conicyt.cl/fondap/sobre-fondap/que-es-fondap/), dependiente de la Agencia Nacional de Investigación y Desarrollo ([ANID](https://www.anid.cl/)) del Ministerio de Ciencia, Tecnología, Conocimiento e Innovación ([MinCiencia](https://www.minciencia.gob.cl/)). ELSOC además cuenta como socio al Instituto Milenio para la Investigación en Depresión y Personalidad ([MIDAP](https://midap.org/)).
+
+
+## Sobre ELSOC
+
+El [Estudio Longitudinal Social de Chile (ELSOC)](https://coes.cl/encuesta-panel/) es una encuesta panel, representativa de la población nacional urbana, que analiza la estabilidad y cambio de las creencias, actitudes y percepciones que tenemos los chilenos y chilenas respecto de la convivencia y del conflicto, la cohesión y una amplia gama de aspectos políticos y sociales a lo largo del tiempo.
+
+Este estudio sigue la evolución de cerca de 4.500 chilenos y chilenas a lo largo de los últimos 7 años. Actualmente, se encuentran disponibles 6 olas del estudio, abarcando el período entre 2016 y 2022. Sus temas de estudio y su aspecto longitudinal convierten a ELSOC en un recurso único en Chile y América Latina para analizar la evolución de la sociedad chilena y para el desarrollo de las ciencias sociales en Chile.
+
+Durante los últimos años, ELSOC se ha consolidado como un importante insumo para el desarrollo de investigación científica y aplicada en ciencias sociales. En el sitio web de (ELSOC)(https://coes.cl/encuesta-panel/) se puede acceder a más información y a la documentación metodológica del estudio. 
+
+
+## Foco en el cambio longitudinal
+
+Radiografía del Cambio Social tiene como objetivo fundamental caracterizar la estabilidad y el cambio en opiniones, actitudes y conductas de los participantes a lo largo del tiempo, enfocándose en distintas dimensiones de la cohesión y conflicto en Chile.
+
+Para el logro de dicho objetivo, el presente reporte se centrará en un subconjunto de participantes del estudio: Desde la muestra original, los 1.303 entrevistados y entrevistadas que participaron en las seis olas de ELSOC, y desde la muestra refresco, los 770 entrevistados y entrevistadas que participaron en las últimas cuatro olas sin excepción. Dado lo anterior, se cuenta con 2.076 participantes, submuestra que será la base empírica de los hallazgos expuestos en las siguientes secciones.
+
+A continuación se describe a este grupo de participantes según los mismos atributos sociodemográficos (sexo, edad, educación y zona de residencia). Tal como se observa en el Gráfico \@ref(fig:graf-composicion-muestra), existe un predominio de mujeres en la muestra; las edades de los participantes de concentran fundamentalmente entre los 30 y 65 años de edad. Adicionalmente, la maroría de la muestra tiene educación media o superior y viven en ciudades de medianas y pequeñas y con una alta presencia de habitantes de Santiago.
+
+
+
+```{r graf-composicion-muestra, fig.cap='Composición de muestra longitudinal'}
+
+elsoc_long_2016_2022 %>% 
+  filter(tipo_atricion == 1 & ola == 6) %>% 
+  as_label(m0_sexo) %>% 
+  mutate(edadt = factor(car::recode(m0_edad, "18:29 = 1; 30:49 = 2; 50:64 = 3; 65:150 = 4"),
+                      levels = 1:4,
+                      labels = c('18-29', '30-49', '50-64', '65 o más')),
+         educ = factor(car::recode(m01, recodes = "1:3 = 1; 4:5 = 2; 6:7 = 3; 8:10 = 4"),
+                       levels = 1:4,
+                       labels = c("Basica", "Media", "Tecnica", "Universitaria")),
+         estrato = factor(car::recode(estrato, recodes = "5:6=5"),
+                       levels = 1:5,
+                       labels = c("Santiago", "Valparaíso", "Concepción",
+                                  "Ciudades\ngrandes", "Medianas o\npequeñas")),
+         ponderador0 = 1) %>%
+  survey_design_elsoc(weights = ponderador0) %>% 
+  prop_list(m0_sexo, edadt, educ, estrato, na.rm = TRUE) %>% 
+  mutate(name = factor(name, levels = c('m0_sexo', 'edadt', 'educ', 'estrato'),
+                       labels = c('Sexo', 'Tramo de edad', 'Nivel educacional', 'Estrato'))) %>% 
+  ggplot(aes(y = prop, x = fct_rev(value), fill = value,
+             label = scales::percent(prop, .1))) +
+  facet_wrap(.~name, scales = 'free_y') +
+  theme_bw() + 
+  geom_col(position = 'dodge2',
+           fill = c(viridis(2, begin = .33, end = .66, direction = -1), 
+                    viridis(4, end = .85, direction = -1), 
+                    viridis(4, end = .85, direction = -1), 
+                    viridis(5, end = .85, direction = -1))) +
+  geom_text(position = position_dodge(.9), hjust = -0.1, size = 3) +
+  coord_flip() +
+  xlab(NULL) + 
+  ylab(NULL) +
+  scale_y_continuous(labels = scales::percent, limits = c(0,1)) + 
+  theme(legend.position = 'none') + 
+  labs(caption = 'Fuente: Elaboración propia en base a datos ELSOC 2016-2022.\nNota: Se consideran observaciones de individuos sin atrición entre olas. N=10.912 (2.076 individuos)') +
+  theme(plot.caption = element_text(hjust = 0))
+
+```
+
+
+Los resultados que se presentan a continuación incorporan el diseño muestral complejo de la encuesta, por lo que incorporan los ponderadores muestrales ajustados a población regional y sexo, según estrato y conglomerado muestral.
