@@ -75,3 +75,8 @@ vínculos-territoriales
 bienestar
 conclusiones
 author-gonzález-roberto-bargsted-matías-figuereido-ana-miranda-daniel-cerda-edgardo-salas-lewin-rocío-delgado-carlos
+análisis-de-correlaciones
+cálculo-del-coeficiente-alfa-de-cronbach
+presentación-del-análisis
+análisis-de-correlaciones-1
+cálculo-del-coeficiente-alfa-de-cronbach-1

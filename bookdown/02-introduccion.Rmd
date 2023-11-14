@@ -1,5 +1,5 @@
 
-# Presentación del estudio
+# Presentación del análisis
 
 
 ```{r cargar-paquetes-2}
@@ -25,6 +25,28 @@ load(file.path('..', 'inputs', 'ELSOC_Long.RData'))
 load(file.path('..', 'inputs', 'ELSOC_Wide.RData'))
 
 ```
+
+
+<div style="text-align: justify">
+
+
+
+
+## Análisis de correlaciones
+
+El análisis de correlaciones constituye una parte esencial del análisis métrico, destinada a evaluar la naturaleza y la fuerza de las relaciones lineales entre las variables seleccionadas a través de las diferentes olas del ELSOC. Este proceso permitirá identificar patrones y tendencias que contribuirán a una comprensión más profunda de la interconexión entre las distintas dimensiones de nuestro estudio.
+
+El análisis de correlación se lleva a cabo cuando uno o dos ítems conformar un concepto específico. Por ejemplo, en el módulo “Sociodemográfico” el concepto especifico “edad” es medido con un único ítem “Edad del entrevistado” a lo largo de cada una de las olas del estudio, por lo tanto, tendríamos correlaciones inter-ola del ítem. Por otra parte, cuando se tiene dos ítems por concepto se realiza la correlación entre ítems al interior de cada ola e inter-ola. Lo anterior busca verificar la consistencia de los conceptos específicos medidos con dos ítems a lo largo del tiempo.
+
+
+## Cálculo del Coeficiente Alfa de Cronbach
+
+La fiabilidad de las mediciones del ELSOC será rigurosamente evaluada mediante el cálculo del coeficiente alfa de Cronbach. Este indicador proporciona una medida de la consistencia interna de la escala de medición utilizada, asegurando la confiabilidad y validez de los ítem que conformar los conceptos específicos del estudio.
+
+A través de este análisis métrico, buscamos no solo explorar las asociaciones entre las variables sino también garantizar la solidez y la coherencia de nuestras mediciones. Este documento proporcionará una visión detallada de las mediciones empleadas en el ELSOC.
+
+El cálculo de los coeficientes de Alfa de Cronbach se aplicará a los conceptos específicos que estén conformados por más de dos ítems, además este proceso se llevará en dos etapas. Primero, se realiza en cálculo de los coeficientes al interior de cada ola, estos con el objetivo de verificar la consistencia interna de las escalas. Posteriormente, se realizar correlaciones inter-olas de los valores promedios de los alfas de cada concepto especifico, con el objetivo de verificar el comportamiento de las escalas entre olas.
+
 
 ## Sobre COES
 
