@@ -1,0 +1,32 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+
+# Anexos {-}
+
+
+```{r cargar-paquetes-5}
+rm(list=ls())
+
+library(knitr)
+library(kableExtra)
+library(gridExtra)
+library(tidyverse)
+library(sjmisc)
+library(sjlabelled)
+library(elsoc)
+library(lubridate)
+library(viridis)
+library(statar)
+library(bookdown)
+```
+
+
+```{r cargar-datos-5}
+
+load(file.path('..', 'inputs', 'ELSOC_Long.RData'))
+load(file.path('..', 'inputs', 'ELSOC_Wide.RData'))
+
+```

@@ -1,0 +1,32 @@
+# Análisis de correlaciones
+
+<div style="text-align: justify">
+
+```{r cargar-paquetes-2}
+rm(list=ls())
+
+library(knitr)
+library(kableExtra)
+library(gridExtra)
+library(tidyverse)
+library(sjmisc)
+library(sjlabelled)
+library(elsoc)
+library(lubridate)
+library(viridis)
+library(statar)
+library(bookdown)
+```
+
+```{r cargar-datos-2}
+
+load(file.path('..', 'inputs', 'ELSOC_Long.RData'))
+load(file.path('..', 'inputs', 'ELSOC_Wide.RData'))
+
+```
+
+
+
+
+
+
