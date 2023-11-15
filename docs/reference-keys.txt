@@ -80,3 +80,5 @@ cálculo-del-coeficiente-alfa-de-cronbach
 presentación-del-análisis
 análisis-de-correlaciones-1
 cálculo-del-coeficiente-alfa-de-cronbach-1
+alpha-de-cronbach
+dudas-y-consultas

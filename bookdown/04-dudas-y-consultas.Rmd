@@ -1,0 +1,5 @@
+# Dudas y consultas
+
+<div style="text-align: justify">
+
+En caso de que tenga dudas sobre aspectos de la validación de los datos no cubiertos por el presente Informe de Análisis de Propiedades Métricas, las cuales no puedan ser resueltas por otros medios, puede comunicarse con el Equipo de Encuestas COES al correo electrónico [elsoc@coes.cl](elsoc@coes.cl). El equipo procesará su solicitud y tratará de contestar en el más breve plazo.

@@ -1,5 +1,5 @@
 --- 
-title: "Informe de análisis de propiedades métricas ELSOC 2016-2022"
+title: "Informe de Análisis de Propiedades Métricas ELSOC 2016-2022"
 subtitle: "Estudio Longitudinal Social de Chile"
 author: "Equipo ELSOC"
 site: bookdown::bookdown_site
