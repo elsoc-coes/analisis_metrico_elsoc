@@ -24,7 +24,46 @@ library(bookdown)
 ```
 
 
+## Ejemplo
+
+En construcción.
+
+
+## Módulo 1: Caracterización Sociodemográfica
 
 
 
 
+## Módulo 2: Ciudadanía y Democracia
+
+En construcción.
+
+
+## Módulo 3: Redes sociales e Interacciones inter-grupales
+
+En construcción.
+
+
+## Módulo 4: Legitimidad y desigualdad social
+
+En construcción.
+
+
+## Módulo 5: Conflicto social
+
+En construcción.
+
+
+## Módulo 6: Dimensión barrial
+
+En construcción.
+
+
+## Módulo 7: Salud y bienestar
+
+En construcción.
+
+
+## Módulo 8: Género
+
+En construcción.
