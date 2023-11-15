@@ -29,9 +29,8 @@ editor_options:
 
 ```{js, echo = FALSE}
 title = document.getElementById('header');
-title.innerHTML = '<img src="inputs/ELSOC.png" alt="ELSOC">' + title.innerHTML
+title.innerHTML = '<img src="imagenes/logo.png" alt="ELSOC">' + title.innerHTML
 ```
-
 
 <div style="text-align: justify">
 
