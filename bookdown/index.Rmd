@@ -16,7 +16,7 @@ toc-depth: 1
 lof: True
 lot: True
 description: "Análisis métrico ELSOC 2016-2022"
-github-repo: "elsoc-coes/rcs_v1"
+github-repo: "elsoc-coes/analisis_metrico_elsoc"
 always_allow_html: true
 editor_options: 
   markdown: 
