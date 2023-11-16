@@ -1,4 +1,4 @@
-book_filename: "reporte-elsoc"
+book_filename: "analisis-metrico-elsoc"
 delete_merged_file: true
 language:
   ui:
@@ -19,12 +19,12 @@ language:
     remark: 'Remark. '
     solution: 'Solution. '  
 output_dir: "../docs"
-og:title: "Radiografía del Cambio Social en Chile 2016-2021"
+og:title: "Informe de Análisis Métrico ELSOC 2016-2022"
 og:type: "book"
-og:url: "https://radiografia-cambio-social-2016-2021.netlify.app/"
+og:url: "https://analisis-metrico-elsoc.netlify.app/"
 og:image: "imagenes/logo.png"
-og:description: "Resultados ELSOC 2016-2021"
+og:description: "Análisis Métrico ELSOC 2016-2022"
 twitter:card: "summary"
-twitter:title: "Radiografía del Cambio Social en Chile 2016-2021"
-twitter:description: "Resultados ELSOC 2016-2021"
+twitter:title: "Informe de Análisis Métrico ELSOC 2016-2022"
+twitter:description: "Análisis Métrico ELSOC 2016-2021"
 twitter:image: "imagenes/logo.png"
