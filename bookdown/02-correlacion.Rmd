@@ -21,13 +21,11 @@ library(psych)
 
 ```{r cargar-datos-2}
 
-load("./Datos/ELSOC_Wide.RData")
-lc <- read_xlsx("./Libro de Codigo/0A_Listado_Variables_Global_ELSOC_v2022_v4.xlsx",
+load("../inputs/datos/ELSOC_Wide.RData")
+lc <- read_xlsx("../inputs/libro_de_codigo/0A_Listado_Variables_Global_ELSOC_v2022_v4.xlsx",
                 sheet = "2_Items_Total")
 
 el <- elsoc_wide_2016_2022; elsoc_wide_2016_2022 <- NULL
-el <- el %>% rename("m48_hijos_w02" = "m48_w02",
-                    "m48_hijos_w04" = "m48_w04")
 
 el <- el %>%
   # Se seleccionan solamente aquellas variables que tengan valores numericos
@@ -52,7 +50,7 @@ el <- el %>%
 ```
 
 
-```{r codigo de calculo de correlaciones}
+```{r correlaciones}
 
 conceptos_grls <- unique(lc$concepto_general)
 conceptos_eps <- unique(lc$Concepto_especifico_2)
@@ -240,7 +238,7 @@ En construcción.
 ## Módulo 1: Caracterización Sociodemográfica
 
 
-```{r correlaciones modulo sociodemoggrafico}
+```{r correlaciones_sociodem}
 
 # Correlaciones Inter olas de las variables sociodemograficas
 

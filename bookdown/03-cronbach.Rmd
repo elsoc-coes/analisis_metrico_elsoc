@@ -2,6 +2,9 @@
 
 <div style="text-align: justify">
 
+En construcción.
+
+
 ```{r cargar-paquetes-3}
 rm(list=ls())
  
@@ -30,7 +33,6 @@ options(dplyr.summarise.inform = FALSE)
 
 ## Ejemplo
 
-En construcción.
 
 
 ## Módulo 1: Caracterización Sociodemográfica
@@ -40,49 +42,34 @@ En construcción.
 
 ## Módulo 2: Redes sociales e Interacciones inter-grupales
 
-En construcción.
-
 
 
 
 ## Módulo 3: Territorio
-
-En construcción.
-
 
 
 
 
 ## Módulo 4: Ciudadanía y Democracia
 
-En construcción.
-
-
 
 
 
 ## Módulo 5: Legitimidad y desigualdad social
-
-En construcción.
 
 
 
 
 ## Módulo 6: Conflicto social
 
-En construcción.
-
-
 
 
 
 ## Módulo 7: Salud y bienestar
-
-En construcción.
 
 
 
 
 ## Módulo 8: Género
 
-En construcción.
+
